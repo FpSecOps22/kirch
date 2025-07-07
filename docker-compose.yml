@@ -1,0 +1,14 @@
+services:
+  # 'app' é o nome que damos ao serviço da nossa aplicação principal.
+  app:
+    # 'build: .' instrui o Docker a construir uma imagem usando o 'Dockerfile' encontrado no diretório atual.
+    build: . 
+    # 'container_name' define um nome fixo para o contêiner, facilitando a sua identificação.
+    container_name: aid
+    # 'ports' mapeia uma porta do seu computador (host) para uma porta dentro do contêiner. Formato: "HOST:CONTAINER"
+    ports: 
+      - "8000:8000" 
+    # 'volumes' sincroniza uma pasta do seu computador com uma pasta dentro do contêiner. Ótimo para desenvolvimento.
+    volumes: 
+      - .:/app
+    
